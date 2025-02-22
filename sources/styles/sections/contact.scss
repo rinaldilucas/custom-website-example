@@ -1,0 +1,134 @@
+.contact {
+    &__wrapper {
+        max-width: vw(360);
+        margin: auto;
+
+        @include media(">desktop") {
+            max-width: vw(600);
+        }
+    }
+
+    &__title {
+        @extend .title;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include media(">desktop") {
+                width: vw(550);
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: column;
+
+        @include media(">desktop") {
+            flex-direction: row;
+            margin: 0 0 vw(25);
+        }
+
+        &--no-margin {
+            margin: 0;
+        }
+    }
+
+    &__input-group {
+        width: 100%;
+        margin: vw(7) 0;
+
+        @include media(">desktop") {
+            margin: 0;
+        }
+
+        &--half {
+            width: 100%;
+
+            @include media(">desktop") {
+                width: 48%;
+            }
+        }
+
+        input:not([type="checkbox"]),
+        textarea,
+        .file-uploader {
+            box-sizing: border-box;
+            display: block;
+            border-radius: 60px;
+            width: 100%;
+            height: vw(55);
+            padding: vw(10) vw(30);
+            font-weight: 400;
+            color: $font-color;
+            background-image: none;
+            border: 0;
+            @extend .drop-shadow;
+
+            &:focus {
+                @extend .drop-shadow;
+                outline: 0;
+            }
+
+            &::placeholder {
+                font-family: $font-main;
+                color: $font-color;
+            }
+        }
+
+        input[type="file"] {
+            padding: 0;
+            position: absolute;
+            margin-top: vw(-55);
+            width: vw(260);
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-uploader {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: vw(170);
+            }
+        }
+
+        textarea {
+            height: auto;
+        }
+
+        small {
+            margin-top: vw(15);
+            display: block;
+        }
+    }
+
+    &__disclaimer {
+        width: 100%;
+        margin: vw(5) 0 0 vw(40);
+
+        @include media(">desktop") {
+            margin: vw(12) 0 0 vw(55);
+        }
+    }
+
+    &__button {
+        margin-top: vw(20);
+        @extend .button;
+    }
+}

@@ -1,0 +1,28 @@
+/* ============================================== */
+/* ================== buttons =================== */
+/* ============================================== */
+.button {
+    border-radius: vw(30);
+    font-family: $font-main;
+    font-size: vw(16);
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 1;
+    padding: vw(12) vw(32);
+    position: relative;
+    color: $white;
+    background: $blue;
+    display: inline-block;
+    box-shadow: 0 0 vw(1) rgba(0, 0, 0, 0);
+    border: none;
+    @extend .hover-zoom;
+
+    &:focus {
+        box-shadow: none;
+        outline: 0;
+    }
+
+    &:hover {
+        color: $white;
+    }
+}

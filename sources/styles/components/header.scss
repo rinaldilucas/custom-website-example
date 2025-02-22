@@ -1,0 +1,184 @@
+.header {
+    @extend .drop-shadow;
+    padding: vw(15) 0;
+    position: fixed;
+    z-index: 5;
+    background-color: $white;
+    width: 100%;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        position: absolute;
+    }
+
+    &__wrapper {
+        max-width: vw(360);
+        height: vw(40);
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        @include media(">desktop") {
+            max-width: vw(1000);
+        }
+    }
+
+    &__logo {
+        width: vw(80);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__menu {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        justify-content: flex-end;
+        flex-direction: column;
+        margin-top: vw(50);
+
+        @include media(">desktop") {
+            margin: 0;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &-purchase {
+            @include media("<desktop") {
+                order: -1;
+            }
+
+            a {
+                border-radius: vw(20);
+                background-color: $accent;
+                color: $white;
+                padding: vw(10) vw(20);
+                @extend .hover-zoom;
+
+                @include media("<desktop") {
+                    display: inline-block;
+                }
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        height: 100%;
+        width: vw(280);
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -90%;
+        transition: left 0.3s ease-out;
+        @extend .drop-shadow;
+        background: $white;
+        display: flex;
+        align-items: flex-start;
+
+        @include media(">desktop") {
+            position: static;
+            box-shadow: none;
+            width: auto;
+            align-items: center;
+        }
+
+        &-link {
+            color: $font-color;
+            font-weight: 600;
+            margin: vw(10) vw(20) vw(10) vw(45);
+            font-size: vw(20);
+            display: block;
+
+            @include media(">desktop") {
+                color: $font-color;
+                font-weight: 600;
+                margin: 0 0 0 vw(25);
+                font-size: vw(18);
+            }
+
+            &:hover {
+                color: $accent;
+            }
+
+            &.active {
+                color: $blue;
+            }
+        }
+
+        &-copyright {
+            color: $font-color;
+            font-weight: 400;
+            position: absolute;
+            left: vw(35);
+            bottom: vw(20);
+
+            @include media(">desktop") {
+                display: none;
+            }
+        }
+
+        .active-menu & {
+            left: 0;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        width: vw(70);
+        transform: scale(0.4) rotate(180deg);
+        position: relative;
+        left: vw(15);
+
+        @include media(">desktop") {
+            display: none;
+        }
+
+        span {
+            background: $onix;
+            border-radius: vw(10);
+            height: vw(7);
+            margin: vw(7) 0;
+            transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+            &:nth-of-type(1) {
+                width: 50%;
+            }
+
+            &:nth-of-type(2) {
+                width: 100%;
+            }
+
+            &:nth-of-type(3) {
+                width: 75%;
+            }
+        }
+
+        input[type="checkbox"] {
+            display: none;
+
+            &:checked ~ span:nth-of-type(1) {
+                transform-origin: bottom;
+                transform: rotatez(45deg) translate(vw(8), vw(0));
+            }
+
+            &:checked ~ span:nth-of-type(2) {
+                transform-origin: top;
+                transform: rotatez(-45deg);
+            }
+
+            &:checked ~ span:nth-of-type(3) {
+                transform-origin: bottom;
+                width: 50%;
+                transform: translate(vw(30), vw(-11)) rotatez(45deg);
+            }
+        }
+    }
+}

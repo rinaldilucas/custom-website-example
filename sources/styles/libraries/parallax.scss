@@ -1,0 +1,53 @@
+.parallax {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+
+    .layer {
+        position: absolute !important;
+    }
+
+    .p1 {
+        left: 60% !important;
+        top: -20% !important;
+
+        @include media("<desktop") {
+            left: 49% !important;
+            top: 9% !important;
+        }
+    }
+
+    .p2 {
+        top: 0% !important;
+        left: -41% !important;
+    }
+
+    .p3 {
+        left: 15% !important;
+        top: 29% !important;
+
+        @include media("<desktop") {
+            left: -27% !important;
+            top: 16% !important;
+        }
+    }
+
+    .p4 {
+        left: 38% !important;
+        top: 60% !important;
+
+        @include media("<desktop") {
+            left: 51% !important;
+            top: 36% !important;
+        }
+    }
+
+    .p5 {
+        left: -49% !important;
+        top: 75% !important;
+    }
+}

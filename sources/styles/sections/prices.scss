@@ -1,0 +1,104 @@
+.prices {
+    &__wrapper {
+        max-width: vw(360);
+        margin: auto;
+
+        @include media(">desktop") {
+            max-width: vw(1000);
+        }
+    }
+
+    &__title {
+        @extend .title;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include media(">desktop") {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+    }
+
+    &__item {
+        width: vw(320);
+        box-sizing: border-box;
+        margin: vw(10) 0;
+        position: relative;
+
+        @include media(">desktop") {
+            margin: 0 vw(40);
+            width: vw(350);
+        }
+    }
+
+    &__item-wrapper {
+        padding: vw(55) vw(40);
+        background-color: $white;
+        border-radius: vw(20);
+        @extend .drop-shadow;
+        text-align: center;
+
+        p {
+            line-height: vw(28);
+        }
+
+        h3 {
+            font-size: vw(36);
+            font-weight: 700;
+            margin: 0;
+
+            em {
+                font-style: normal;
+                font-size: vw(14);
+                vertical-align: super;
+                margin-right: vw(5);
+            }
+
+            span {
+                font-size: vw(16);
+                font-weight: 400;
+                margin-left: vw(10);
+            }
+        }
+
+        img {
+            width: vw(150);
+            @extend .hover-zoom;
+        }
+    }
+
+    &__item-badge {
+        color: $white;
+        background: $accent;
+        transform: rotate(-90deg);
+        position: absolute;
+        left: vw(15);
+        top: vw(10);
+        padding: vw(7) vw(12);
+        font-size: vw(14);
+        font-weight: 400;
+        border-top-left-radius: vw(15);
+        border-bottom-left-radius: vw(15);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__item-button {
+        margin: vw(15) 0 vw(8);
+        @extend .button;
+    }
+
+    &__item-anchor {
+        display: inline-block;
+        font-weight: 700;
+        margin-top: vw(15);
+        color: $accent;
+        @extend .hover-zoom;
+    }
+}

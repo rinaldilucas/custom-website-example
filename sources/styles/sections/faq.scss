@@ -1,0 +1,79 @@
+.faq {
+    &__wrapper {
+        max-width: vw(360);
+        margin: auto;
+
+        @include media(">desktop") {
+            max-width: vw(1000);
+        }
+    }
+
+    &__title {
+        @extend .title;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media(">desktop") {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+    }
+
+    &__column {
+        width: vw(320);
+        box-sizing: border-box;
+
+        @include media(">desktop") {
+            width: 49%;
+        }
+    }
+
+    &__accordeon-title {
+        cursor: pointer;
+        padding: vw(18) vw(30) vw(8) 0;
+        margin: 0;
+        position: relative;
+
+        &--open {
+            &:before {
+                transform: translatey(-50%) rotate(-90deg);
+                opacity: 0;
+            }
+            &:after {
+                transform: translatey(-50%) rotate(0) !important;
+            }
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            background-color: $accent;
+            position: absolute;
+            right: vw(8);
+            top: vw(25);
+            transition: $transition-time;
+            width: vw(15);
+            height: vw(4);
+        }
+
+        &:before {
+            transform: translatey(-50%);
+        }
+
+        &:after {
+            transform: translatey(-50%) rotate(90deg);
+        }
+    }
+
+    &__accordeon-text {
+        display: none;
+        padding: vw(10);
+    }
+}

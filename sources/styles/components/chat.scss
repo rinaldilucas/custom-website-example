@@ -1,0 +1,22 @@
+.chat {
+    position: fixed;
+    bottom: vw(20);
+    right: vw(20);
+    z-index: 20;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        background-color: $ice;
+        border: 2px solid $blue;
+    }
+
+    &__button {
+        font-size: vw(18);
+        font-weight: 500;
+        color: $white;
+        @extend .button;
+    }
+
+    i {
+        margin-right: vw(8);
+    }
+}

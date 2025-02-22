@@ -1,0 +1,20 @@
+{{#extend layout }}
+    {{#content "header"}}
+        <main id="site-header">
+            {{> components/header }}
+        </main>
+    {{/content}}
+
+    {{#content "content"}}
+        <main id="site-content">
+            {{#block "body"}}
+            {{/block}}
+        </main>
+    {{/content}}
+
+    {{#content "footer"}}
+        <main id="site-footer">
+            {{> components/footer }}
+        </main>
+    {{/content}}
+{{/extend}}
