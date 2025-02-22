@@ -20,7 +20,7 @@
     <a href="https://github.com/rinaldilucas/custom-website-example"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://rinaldilucas.com">Open</a>
+    <a href="https://rinaldilucas.github.io/custom-website-example/">Open</a>
     ·
     <a href="#donations">Donate</a>       
   </p>
