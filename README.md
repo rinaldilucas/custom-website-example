@@ -82,6 +82,7 @@ Here are some of the features:
 - Lazy loading
 - Custom file upload design and behavior
 - Form integration with third-party libraries
+- Modular and robust validation routine
 - And more
 
 <p align="right">(<a href="#top">back to top</a>)</p>
